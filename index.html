@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="DNS-prefetch" href="//fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+        <title>Kapil Patel - Software Architect</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+            media="print"
+            onload="this.media='all'"
+        />
+        <noscript>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+                rel="stylesheet"
+                type="text/css"
+            />
+        </noscript>
+
+        <style>
+            /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"); */
+
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                font-family: "Poppins", sans-serif;
+                background-color: #ffffff;
+                color: #333333;
+                overflow-x: hidden;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            header {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+
+            .avatar {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: #f0f0f0;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3em;
+                color: #666666;
+            }
+
+            .header-content {
+                text-align: center;
+                z-index: 2;
+            }
+
+            h1 {
+                font-size: 4em;
+                color: #000000;
+                margin: 0;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 0.8s ease forwards 0.5s;
+            }
+
+            .subtitle {
+                font-size: 1.5em;
+                color: #666666;
+                margin-top: 10px;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 0.8s ease forwards 0.7s;
+            }
+
+            .background-text {
+                position: absolute;
+                font-size: 20vw;
+                color: rgba(0, 0, 0, 0.03);
+                white-space: nowrap;
+                pointer-events: none;
+            }
+
+            section {
+                padding: 100px 0;
+                position: relative;
+            }
+
+            h2 {
+                font-size: 2.5em;
+                color: #000000;
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-size: 1.1em;
+                line-height: 1.8;
+                color: #333333;
+            }
+
+            .skills {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 30px;
+            }
+
+            .skill {
+                background-color: #f0f0f0;
+                color: #333333;
+                padding: 5px 15px;
+                border-radius: 20px;
+                margin: 5px;
+                font-size: 0.9em;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .skill:hover {
+                background-color: #e0e0e0;
+                transform: translateY(-3px);
+            }
+
+            .experience-item {
+                margin-bottom: 30px;
+            }
+
+            .experience-item h3 {
+                margin-bottom: 10px;
+                color: #000000;
+            }
+
+            .experience-item .date {
+                font-style: italic;
+                color: #666666;
+                margin-bottom: 10px;
+            }
+
+            .social-links {
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .social-links a {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background-color: #f0f0f0;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+
+            .social-links a:hover {
+                background-color: #e0e0e0;
+                transform: translateY(-3px);
+            }
+
+            .social-links svg {
+                width: 20px;
+                height: 20px;
+                fill: #333333;
+            }
+
+            footer {
+                background-color: #f0f0f0;
+                text-align: center;
+                padding: 20px 0;
+                margin-top: 50px;
+            }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .scroll-indicator {
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: bounce 2s infinite;
+            }
+
+            @keyframes bounce {
+                0%,
+                20%,
+                50%,
+                80%,
+                100% {
+                    transform: translateY(0) translateX(-50%);
+                }
+                40% {
+                    transform: translateY(-30px) translateX(-50%);
+                }
+                60% {
+                    transform: translateY(-15px) translateX(-50%);
+                }
+            }
+
+            .scroll-indicator svg {
+                width: 30px;
+                height: 30px;
+                fill: #333333;
+            }
+
+            .talks-timeline {
+                position: relative;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .talks-timeline::after {
+                content: "";
+                position: absolute;
+                width: 6px;
+                background-color: #f0f0f0;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                margin-left: -3px;
+            }
+
+            .talk-card {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                position: relative;
+                background-color: inherit;
+                width: calc(50% - 40px);
+            }
+
+            .talk-card::after {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                background-color: white;
+                border: 4px solid #e0e0e0;
+                top: 15px;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+            .left {
+                left: 0;
+                padding-right: 40px;
+            }
+
+            .right {
+                left: 50%;
+                padding-left: 40px;
+            }
+
+            .left::after {
+                right: -16px;
+            }
+
+            .right::after {
+                left: -16px;
+            }
+
+            .left::before {
+                content: " ";
+                height: 0;
+                position: absolute;
+                top: 22px;
+                width: 0;
+                z-index: 1;
+                right: 30px;
+                border: medium solid #f0f0f0;
+                border-width: 10px 0 10px 10px;
+                border-color: transparent transparent transparent #f0f0f0;
+            }
+
+            .right::before {
+                content: " ";
+                height: 0;
+                position: absolute;
+                top: 22px;
+                width: 0;
+                z-index: 1;
+                left: 30px;
+                border: medium solid #f0f0f0;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent #f0f0f0 transparent transparent;
+            }
+
+            .talk-content {
+                padding: 20px 30px;
+                background-color: #f0f0f0;
+                position: relative;
+                border-radius: 6px;
+            }
+
+            .talk-content h3 {
+                margin-top: 0;
+                color: #333;
+                font-size: 1.2em;
+            }
+
+            .talk-content {
+                padding: 20px 30px;
+                background-color: #f0f0f0;
+                position: relative;
+                border-radius: 6px;
+            }
+
+            .talk-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .talk-links {
+                display: flex;
+                gap: 10px;
+            }
+
+            .talk-links a {
+                display: inline-block;
+                color: #333;
+                text-decoration: none;
+            }
+
+            .talk-links a:hover {
+                color: #000;
+            }
+
+            .talk-links svg {
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+            }
+
+            .talk-content .date {
+                font-style: italic;
+                color: #666;
+                margin-bottom: 10px;
+            }
+
+            @media screen and (max-width: 600px) {
+                .talks-timeline::after {
+                    left: 31px;
+                }
+
+                .talk-card {
+                    width: 100%;
+                    padding-left: 70px;
+                    padding-right: 25px;
+                }
+
+                .talk-card::before {
+                    left: 60px;
+                    border: medium solid #f0f0f0;
+                    border-width: 10px 10px 10px 0;
+                    border-color: transparent #f0f0f0 transparent transparent;
+                }
+
+                .left::after,
+                .right::after {
+                    left: 15px;
+                }
+
+                .right {
+                    left: 0%;
+                }
+            }
+
+            .opensource-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            .opensource-card {
+                background-color: #ffffff;
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                padding: 20px;
+                transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .opensource-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .opensource-icon {
+                font-size: 2.5em;
+                margin-bottom: 15px;
+                color: #333;
+            }
+
+            .opensource-card h3 {
+                margin: 0 0 10px 0;
+                color: #000;
+            }
+
+            .opensource-card p {
+                flex-grow: 1;
+                margin: 0 0 15px 0;
+            }
+
+            .opensource-link {
+                display: inline-block;
+                padding: 8px 15px;
+                background-color: #f0f0f0;
+                color: #333;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+            .opensource-link:hover {
+                background-color: #e0e0e0;
+            }
+
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+                width: 100%;
+            }
+
+            .project-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .project-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            .project-card h3 {
+                margin-top: 0;
+                color: #000000;
+                font-size: 1.2em;
+            }
+
+            .project-card p {
+                flex-grow: 1;
+                margin-bottom: 15px;
+            }
+
+            .project-link {
+                display: inline-block;
+                padding: 8px 15px;
+                background-color: #e0e0e0;
+                color: #333;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+                text-align: center;
+            }
+
+            .project-link:hover {
+                background-color: #d0d0d0;
+            }
+
+            @media (max-width: 600px) {
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="background-text">GENERALIST</div>
+            <img src="ak.webp" alt="Kapil Patel" class="avatar" />
+            <div class="header-content">
+                <h1>Kapil Patel</h1>
+                <div class="subtitle">Software Architect</div>
+                <div class="social-links">
+                    <a
+                        href="https://github.com/kapilepatel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Github Profile"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                            />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/kapilindore"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="LinkedIn Profile"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                    />
+                </svg>
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="about">
+                <h2>About Me</h2>
+                <p>
+                    With 11 years of professional experience across startups and
+                    public companies, I'm not just a software engineer — I'm a
+                    generalist who thrives on diverse challenges. My journey,
+                    shaped by exceptional mentors, has instilled in me a passion
+                    for pragmatic solutions and a commitment to paying it
+                    forward through mentorship.
+                </p>
+                <p>
+                    I take pragmatic decisions and good engineering practices
+                    that pay compounding returns as we progress, rather than
+                    cutting corners to meet deadlines for today. As a result of
+                    excellent mentorship, I take mentoring, giving and taking
+                    feedback very seriously.
+                </p>
+                <p>
+                    Now a days I'm learning Golang, 
+                    interesting to see how different programming lagugages help us think in an entirely different way.
+                </p>
+                <h3>Skills</h3>
+                <div class="skills">
+                    <div class="skill">C#</div>
+                    <div class="skill">.NET</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">RDBMS</div>
+                    <div class="skill">MySQL</div>
+                    <div class="skill">SQL Server</div>
+                    <div class="skill">No SQL</div>
+                    <div class="skill">Distributed Systems</div>
+                    <div class="skill">Micro services</div>
+                    <div class="skill">Electron</div>
+                    <div class="skill">Go</div>
+                    <div class="skill">AWS</div>
+                    <div class="skill">DevOps</div>
+                    <div class="skill">Basic Linux/Windows Administration</div>
+                </div>
+            </section>
+
+            <section class="experience">
+                <h2>Experience</h2>
+                
+                <div class="experience-item">
+                    <h3>Principal Engineer</h3>
+                    <div class="date">Avalara Inc. - Feb 2019 - Apr 2022</div>
+                    <p>
+                        Content Sourcing Platform: Automated detection of Sales
+                        and Use Tax changes across various states within US,
+                        reducing time from 3+ weeks of manual effort to a few
+                        minutes across many jurisdictions. Architected a No-Code
+                        Self-Serve Platform for Tax Researchers within Avalara
+                        to automate their workflows to identify important
+                        content changes.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Principal Consultant</h3>
+                    <div class="date">Morgan Stanley [Genpact payroll] - Nov 2021 - Sep 2024</div>
+                    <ul>
+                        <li>Development, maintenance, and operation support for multi-million dollar trading application.</li>
+                        <li>Developed and integrated Microsoft Information Protection in existing applications.</li>
+                        <li>Collaborated with cross-functional teams to gather requirements, design the system, and ensure seamless integration with existing systems.</li>
+                        <li>Gained valuable experience collaborating with a diverse team at Morgan Stanley, fostering a dynamic and inclusive work environment.</li>
+                        <li>Demonstrated exceptional adaptability by successfully navigating changing senior leads and project managers, performing consistently well despite changes in reporting relationships and team dynamics.</li>
+                        <li>Provided comprehensive knowledge transfer to incoming team members and served as the primary point of contact for the service.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Tech lead L2</h3>
+                    <div class="date">Potomac Technologies[US Mortgage servicing] - Oct 2018 - Oct 2021</div>
+                    <ul>
+                        <li>Led the development of a next generation Call Center software suite used by hundred of customer representatives for 
+                            US mortgage loan servicing. Used cloud based latest technologies, with efficiency of open source technologies and 
+                            maintaining compatibility with legacy software. Handles hundreds of thousands of loans with millions of dollars in assets.
+                        </li>
+                        <li>Potomac Technologies is an Fintech, AI & Analytics company made up of professionals from Wall Street, 
+                            made by software engineers for tomorrow's technology.</li>
+                        
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Sr. Software Engineer</h3>
+                    <div class="date">Kalmstrom Enterprise AB - Feb 2017 - May 2018</div>
+                    <ul>
+                        <li>Worked on Kanban Task Manager for SharePoint to add new functionalities using SharePoint JSOM, 
+                            JavaScript and third party components like DHTMLX.</li>
+                        <li>Ported redundant legacy codebase to a new better architected and reusable codebase. 
+                            Worked on common codebase of the product, examining and resolving issues between different product teams.</li>
+
+                        <li>Delivered several customized solutions based on SharePoint with custom functionalities. 
+                            Worked as a technical support person for European customers on email and remote control.</li>
+
+                        <li>Developed a new product Pivot Explorer to visualize and analyze content of any SharePoint list. 
+                            It provides a fantastic way to explore data in an Excel table, 
+                            Pivot Explorer is intended to use for business intelligence to explore data in SharePoint lists.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Founding Engineer</h3>
+                    <div class="date">Cuztomise Softech (SaaS Startup) - Feb 2013 - Feb 2017</div>
+                    <ul>
+                        <li>Contributed to the design and scaling of a SaaS product for the pharmaceutical industry,
+                            expanding the user base to thousands of users.</li>
+                        <li>Led end-to-end development, including business analysis, UI/UX design, web, and API
+                            development within an Agile environment.</li>
+
+                        <li>Utilized AWS (EC2, S3, RDS), .NET MVC, Web API, SQL Server, MySQL, jQuery, and JavaScript to
+                            develop robust, scalable solutions.</li>
+
+                    </ul>
+                </div>
+
+            </section>
+
+            <section class="projects">
+                <h2>Notable Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Content Sourcing Platform</h3>
+                        <p>
+                            Automated detection of Sales and Use Tax changes
+                            across various states within US, reducing processing
+                            time from weeks to minutes.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Data Services Platform (Carol)</h3>
+                        <p>
+                            Architected a platform to run internal Big Data
+                            Workloads efficiently, orchestrating Spark-based
+                            processing on dynamically created EMR clusters.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Finder</h3>
+                        <p>
+                            HTML Archive Storage system for storing over 3
+                            billion HTML documents, built using the Suuchi
+                            library.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <h3>AWS Infrastructure Optimization</h3>
+                        <p>
+                            Led the revamp of DevOps processes, resulting in
+                            over a million dollars annual savings through
+                            intelligent use of Spot instances and Auto Scaling.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+           
+
+            
+            <section class="education">
+                <h2>Education</h2>
+                <div class="experience-item">
+                    <h3>Bachelor of Engineering in Computer Science</h3>
+                    <div class="date">
+                        MIT Indore, India - 2008 - 2013
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>
+                Copied from amazing fellow developers <br />👨🏻‍💼 + 🤖 =
+                🎉
+            </p>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".scroll-indicator").click(function () {
+                    $("html, body").animate(
+                        {
+                            scrollTop: $(".about").offset().top,
+                        },
+                        800,
+                    );
+                });
+
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    $(".background-text").css({
+                        transform: "translateX(" + -scroll / 10 + "%)",
+                    });
+                });
+
+                $(".skill").each(function (i) {
+                    $(this).css(
+                        "animation",
+                        `fadeInUp 0.5s ease forwards ${0.1 + i * 0.1}s`,
+                    );
+                });
+            });
+        </script>
+        <!-- 100% privacy-first analytics -->
+        <script
+            async
+            defer
+            src="https://scripts.simpleanalyticscdn.com/latest.js"
+        ></script>
+        <noscript
+            ><img
+                src="https://queue.simpleanalyticscdn.com/noscript.gif"
+                alt=""
+                referrerpolicy="no-referrer-when-downgrade"
+        /></noscript>
+    </body>
+</html>
